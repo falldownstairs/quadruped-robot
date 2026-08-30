@@ -377,25 +377,3 @@ def dance(cycles=5):
 
     stand()
 
-
-try:
-    stand()
-    time.sleep(1)
-
-    bow()
-    worm(cycles=5)
-    cute(cycles=5)
-    dance(cycles=5)
-
-except KeyboardInterrupt:
-    print("\nStopped.")
-
-finally:
-    stand()
-    time.sleep(1)
-
-    for channel in range(8):
-        pca.channels[channel].duty_cycle = 0
-
-    pca.deinit()
-    i2c.deinit()
